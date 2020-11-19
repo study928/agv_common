@@ -1,0 +1,10 @@
+<launch>
+    <!-- ypspur_ros -->
+  <include file="$(find ypspur_ros)/launch/ypspur_ros.launch" />
+
+    <!-- ps4_controller 
+  <include file="$(find agv_control)/launch/agv_ps4_controller.launch" />
+  -->
+  <include file="$(find agv_control)/launch/test_urg.launch" />
+
+</launch>

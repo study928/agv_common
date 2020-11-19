@@ -1,0 +1,23 @@
+<launch>
+    <!-- static_transform_publisher -->
+  <node pkg="tf" type="static_transform_publisher" name="front_laser" args="0 0 0.1 0 0 0 base_link front_laser 10" />
+  <node pkg="tf" type="static_transform_publisher" name="back_laser" args="0 0 0.17 3.14159265359 0 0 base_link back_laser 10" />
+ 
+	  <!-- front_laser -->
+  <node pkg='urg_node' name='lidar1' type='urg_node' required='true' >
+    <param name='ip_address' value='192.168.0.123' />
+    <param name="frame_id" value="front_laser" /> 
+    <remap from="scan" to="scan1"/>
+  </node>
+
+	  <!-- back_laser -->
+  <node pkg='urg_node' name='lidar2' type='urg_node' required='true' >
+    <param name='ip_address' value='192.168.0.10' />
+    <param name="frame_id" value="back_laser" />
+    <remap from="scan" to="scan2"/>
+  </node>
+
+	  <!-- ira_laser_tools -->
+  <include file='$(find ira_laser_tools)launch/laserscan_multi_merger.launch' />
+
+</launch>

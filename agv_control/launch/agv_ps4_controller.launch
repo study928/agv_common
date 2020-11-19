@@ -1,0 +1,10 @@
+<launch>
+    <!-- joy_node -->
+  <node pkg="joy" name="joy" type="joy_node" required="true" />
+
+    <!-- led _on _off and cmd_vel publish-->
+  <node pkg="agv_control" name="ps4_controller" type="ps4_controller.py" required="true" />
+
+    <!-- led on off sub-->
+  <node pkg="agv_control" name="led_sub" type="led_sub.py" />
+</launch>

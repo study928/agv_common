@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="agv_control" name="key_vel" type="key_vel.py" required="true" output="screen" />
+    <!-- led on off sub-->
+  <node pkg="agv_control" name="led_sub" type="led_sub.py" required="true" output="screen" />
+</launch>

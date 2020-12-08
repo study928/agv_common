@@ -1,0 +1,11 @@
+topics:
+-
+  name    : navigation
+  topic   : /navigation/cmd_vel
+  timeout : 0.5
+  priority: 100
+-
+  name    : joystick
+  topic   : /joystick/cmd_vel
+  timeout : 0.5
+  priority: 80
